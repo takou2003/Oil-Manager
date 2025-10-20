@@ -1,0 +1,167 @@
+div{
+	width:350px;
+	height:60px;
+	background-color:gray;
+	display:flex;
+	flex-direction:row;
+
+	z-index:9999;
+	
+}
+div div{
+	width:50px;
+	height:50px;
+	background-color:white;
+	border-radius:25px;
+	position:relative;
+	top:5px;
+	left:5px;
+	justify-content:center;
+	text-align:center;
+}
+div div .logo{
+	width:40px;
+	height:40px;
+}
+div .texti{
+	width:210px;
+	height:50px;
+	background-color:transparent;
+	border-radius:0px;
+	margin-left:10px;
+	display:flex;
+	flex-direction:column;
+}
+div .texti p{
+	font-family:arial;
+	margin-top:-10px;
+	position:relative;
+	top:12px;
+	color:white;
+}
+div .imps{
+	width:40px;
+	height:40px;
+	border-radius:20px;
+	top:10px;
+	left:20px;
+	cursor:pointer;
+	position:relative;
+}
+
+div .imps img{
+	width:30px;
+	height:30px;
+	position:relative;
+	top:3px;
+}
+section{
+	width:auto;
+	height:auto;
+	background-color:transparent;
+	max-width:700px;
+
+}
+
+section div{
+	width:150px;
+	height:85px;
+	background-color:gray;
+	display:inline-block;
+	position:relative;
+	margin-top:8px;	
+}
+section div div{
+	width:150px;
+	height:35px;
+	background-color:whitesmoke;
+	border-radius:0px;
+	position:relative;
+	left:0px;
+	top:-8px;
+	justify-content:center;
+	text-align:center;
+	
+}
+section div div p{
+	font-family:arial;
+	position:relative;
+	top:-5px;
+	color:gray;
+	
+}
+section div p{
+	font-family:arial;
+	position:relative;
+	top:-5px;
+	color:white;
+}
+h3{
+	font-family:arial;
+	color:gray;	
+}
+.report{
+	width:350px;
+	height:60px;
+	background-color:whitesmoke;
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+}
+.report input{
+	width:100px;
+	height:30px;
+	border:none;
+	outline:none;
+	position:relative;
+	top:15px;
+}
+.report button{
+	width:100px;
+	position:relative;
+	left:15px;
+	height:30px;
+	background-color:green;
+	font-family:arial;
+	justify-content:center;
+	text-align:center;
+	border:none;
+	top:15px;
+	color:white;
+	cursor:pointer;
+}
+table{
+	width:300px;
+	margin-top:10px;
+	font-family:arial;
+}
+th{
+	background-color:gray;
+	color:white;
+	width:90px
+}
+td{
+	text-align:center;
+	font-family:arial;
+	color:gray;
+	background-color:whitesmoke;
+}
+
+.t2{
+	width:300px;
+	margin-top:10px;
+	font-family:arial;
+}
+.t2  thead th{
+	background-color:gray;
+	color:white;
+	width:70px;
+	font-size:14px;
+}
+.t2  tbody tr td{
+	text-align:center;
+	font-family:arial;
+	color:gray;
+	background-color:whitesmoke;
+	font-size:11px;
+}

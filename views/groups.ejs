@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel='stylesheet' href='/stylesheets/groups.css' type='text/css' />
+    <link rel="icon"type="image/png" href="/images/l1.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>liqnet-groups</title>
+  </head>
+  <script>
+  	
+  </script>
+  <body>
+
+	<center>
+		<div>
+			<div><img class="logo" src="/images/<%=gid %>.png"></div>
+			<p><%= gname %></p>
+		</div>
+		<section>
+			<center>
+				<% stations.forEach(station =>{%>
+				
+					<div onclick="window.location.href='/groupes/<%= group_direct%>/station/<%= station.id%>'">
+						<p><%= station.name%></p>
+					</div>
+				<% }); %>			
+			</center>
+		</section>
+	</center>
+	
+  </body>
+</html>

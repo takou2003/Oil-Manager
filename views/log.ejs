@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel='stylesheet' href='/stylesheets/log.css' type='text/css' />
+    <link rel="icon"type="image/png" href="/images/l1.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>liqnet-log</title>
+  </head>
+  <body>
+
+	<center>
+		<div>
+			<center>
+				<p>Welcome to <strong>NetLiq</strong></p>
+				<div><img src="/images/log1.png"></div>
+				<input type="text" placeholder="Enter 9 characters code " id="code" >
+				<button id="mbutton" onclick="check()">Connect</button>
+				<h5 id="text_error"></h5>
+			</center>
+		</div>
+	</center>
+	
+  </body>
+</html>
+<script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+        }
+        document.getElementById('mbutton').disabled = true;
+        document.getElementById('code').addEventListener('input',()=>{
+        
+        	let enter = event.target.value;
+                if (enter.length === 9) {
+       		 	document.getElementById('mbutton').disabled = false;
+    		}else{
+       			 document.getElementById('mbutton').disabled = true;
+    		}
+        });
+
+
+// Avec gestion de timeout
+async function validateGroupCodeWithTimeout(code, timeoutMs = 5000) {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const response = await fetch(`http://192.168.43.87:3000/login?code=${encodeURIComponent(code)}`, {
+      signal: controller.signal
+    });
+    
+    clearTimeout(timeoutId);
+    
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Erreur serveur');
+    }
+    
+    return await response.json();
+    
+  } catch (error) {
+    if (error.name === 'AbortError') {
+      throw new Error('La requête a expiré - vérifiez votre connexion');
+    }
+    throw error;
+  }
+}
+
+// Utilisation
+function check(){
+  let datax = document.getElementById('code').value;
+  validateGroupCodeWithTimeout(datax)
+  .then(data => {
+    if (data.exist) {
+      window.location.href = `/groupes/${data.key}`;
+      //console.log(data);
+    } else {
+      document.getElementById('text_error').innerText = "Code invalide";
+    }
+  })
+  .catch(error => {
+    document.getElementById('text_error').innerText = error.message;
+  });
+}	
+</script>

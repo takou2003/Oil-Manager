@@ -1,0 +1,143 @@
+div{
+	width:350px;
+	height:60px;
+	background-color:gray;
+	display:flex;
+	flex-direction:row;
+
+	z-index:9999;
+	
+}
+div div{
+	width:50px;
+	height:50px;
+	background-color:white;
+	border-radius:25px;
+	position:relative;
+	top:5px;
+	left:5px;
+}
+
+div div .logo{
+	width:40px;
+	height:40px;
+	position:relative;
+	left:5px;
+}
+p{
+	font:19px Arial; 
+	position:relative;
+	left:40px;
+	color:white;
+}
+section{
+	width:auto;
+	height:auto;
+	background-color:white;
+	position:relative;
+	top:20px;
+	
+}
+section div{
+	width:250px;
+	height:380px;
+	background-color:silver;
+	position:relative;
+	margin:10px;
+	display:inline-block;
+
+}
+section div div{
+	width:200px;
+	height:30px;
+	background-color:white;
+	border-radius:0px;
+	left:0px;
+	display:flex;
+	flex-direction:row;
+}
+section div div .mini{
+	font-size:11px;
+	top:-7px;
+}
+
+section div .curve{
+	width:200px;
+	height:240px;
+	background-color:transparent;
+	border-radius:0px;
+	left:0px;
+	display:flex;
+	flex-direction:column;
+}
+
+section div .curve .bouchon{
+	width:30px;
+	height:20px;
+	background-color:gray;
+	border-radius:0px;
+	left:0px;
+}
+section div .curve .contain{
+	width:150px;
+	height:160px;
+	background-color:white;
+	left:0px;
+	border-radius:0px;
+}
+section div .curve .contain div{
+	width:144px;
+	/*height:140px;*/
+	left:-7px;
+	border-radius:0px;
+	top:8px;
+} 
+section div .curve .volume{
+	width:170px;
+	height:40px;
+	background-color:gray;
+	border-radius:0px;
+	left:0px;
+	top:
+}
+
+section div .curve .volume p{
+	color:white;
+	left:25px;
+	top:-9px;
+	justify-content:center;
+	text-align:center;
+}
+section div div div{
+	width:31px;
+	height:28px;
+	background-color:gray;
+	border-radius:15px;
+	position:relative;
+	left:0px;
+	top:-9px;
+	cursor:pointer;
+	
+	
+}
+section div div div img{
+	width:20px;
+	height:20px;
+	position:relative;
+	left:4px;
+	top:4px;
+}
+section div div p{
+	top:-15px;
+	color:silver;
+	left:3px;
+}
+select{
+	width:150px;
+	border:none;
+	height:30px;
+	text-align:center;
+	position:relative;
+	top:15px;
+	font-family:arial;
+}

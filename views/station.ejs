@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel='stylesheet' href='/stylesheets/station.css' type='text/css' />
+    <link rel="icon"type="image/png" href="/images/l1.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>liqnet-groups</title>
+  </head>
+  <body>
+
+	<center>
+		<div>
+			<div><img class="logo" src="/images/<%=group_id %>.png"></div>
+			<p><%= sname%></p>
+		</div>
+		<section>
+			<% devices.forEach((device, index) => { %>
+				<div>
+					<center>
+						<div>
+							<p><%= device.name %></p>
+							<p class="mini"><%= device.date %> <%= device.time %></p>
+							<div onclick="view('<%= device.id_d %>', '<%= group_id %>', '<%= group_direct %>')"><img src="/images/report.png"></div>
+						</div>
+						<div class="curve">
+							<center>	
+								<div class="bouchon"></div>
+								<div class="contain">
+									<center>
+										<div id ="v_p"></div>
+									</center>
+								</div>
+								<div class="volume"><center><p><%= device.volume%>/<%= device.volume_total%>L</p></center></div>
+							</center>
+						</div>
+						
+						<select id="<%= device.id_d %>" >
+							<% timing[index].forEach(time => { %>
+								<option value="<%= time %>"><%= time %></option>
+							<% });%>
+						</select>
+					</center>
+					
+				</div>
+				
+			<% });%>			
+		</section>
+	</center>
+	
+  </body>
+</html>
+<script>
+	 var volume_rep = document.querySelectorAll("#v_p");
+  //console.log(volume_rep);
+					
+	let volume = <%- JSON.stringify(devices) %>;
+					console.log(volume[0]);
+					
+	function make_volume(){
+	
+		for(var i = 0; i < volume.length; i++){
+					 	
+			var quotient = volume[i].volume/volume[i].volume_total;
+			//console.log(quotient);
+			var mesure=quotient*100*1.5;
+					 	
+				if(mesure < 60){
+					volume_rep[i].style.backgroundColor="red";
+				}else {
+					volume_rep[i].style.backgroundColor="green";
+				}
+					var topping = 150-mesure-2;
+					volume_rep[i].style.height=`${mesure}px`;
+					volume_rep[i].style.top=`${topping}px`;
+		}
+	
+	}
+  	make_volume();
+  	function view(deviceId, groupid, stationid){
+  		var time_select = document.getElementById(deviceId);
+  		window.location.href=`/groupes/${groupid}/station/${stationid}/journal/${deviceId}/${time_select.value}`;
+   		//console.log("Device:", deviceId, "Mois sélectionné:", time_select.value);
+  	}
+</script>

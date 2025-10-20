@@ -1,0 +1,92 @@
+div{
+	width:350px;
+	height:60px;
+	background-color:gray;
+	display:flex;
+	flex-direction:row;
+
+	z-index:9999;
+	
+}
+div div{
+	width:50px;
+	height:50px;
+	background-color:white;
+	border-radius:25px;
+	position:relative;
+	top:5px;
+	left:5px;
+}
+div .imps{
+	width:40px;
+	height:40px;
+	border-radius:20px;
+	top:10px;
+	left:110px;
+	cursor:pointer;
+	position:relative;
+}
+
+div .imps img{
+	width:30px;
+	height:30px;
+	position:relative;
+	left:5px;
+	top:3px;
+}
+p{
+	font:19px Arial; 
+	position:relative;
+	left:40px;
+	color:white;
+}
+section{
+	width:auto;
+	height:auto;
+	background-color:white;
+	position:relative;
+	top:50px;
+	
+}
+
+section div{
+	width:340px;
+	height:50px;
+	background-color:silver;
+	display:flex;
+	flex-direction:row;
+	margin-top:5px;
+}
+section div p{
+	top:5px;
+}
+section div .p1{
+	left:5px;
+	font-size:14px;
+}
+
+section div .p3{
+	left:150px;
+	font-size:14px;
+
+}
+
+section div .p4{
+	left:150px;
+	font-size:14px;
+	color:red;
+}
+section div .p2{
+	left:50px;
+	font-size:14px;
+}
+
+input[type="search"]{
+
+	position:relative;
+	top:25px;
+	outline:none;
+	height:30px;
+	width:250px;
+	border: 2px solid gray;
+}

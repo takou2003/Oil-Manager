@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <link rel='stylesheet' href='/stylesheets/view_data.css' type='text/css' />
+  <!--  <link rel="icon"type="image/png" href="/images/l1.png"/> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>liqnet-analyse</title>
+  </head>
+  <body>
+	<center>
+		<div>
+			<div><img class="logo" src="/images/<%=gid %>.png"></div>
+			<div class="texti">
+				<p><%= device_name %> <%= name_station %></p>
+				<p><%= final_date%> </p>
+				
+			</div>
+			<div class="imps" onclick="window.print()" ><img src="/images/printer2.png"></div>
+		</div>
+		<h3>RAPPORT</h3>
+		<section>
+			<div>
+				<div>
+					<p>Stock Initial</p>
+				</div>
+				<p><%= stock_initial%></p>
+			</div>
+			
+			<div>
+				<div>
+					<p>Reception Men</p>
+				</div>
+				<p>+<%= collect.index_a %></p>
+			</div>	
+			
+			<div>
+				<div>
+					<p>Index Ouverture</p>
+				</div>
+				<p><%= collect.index_o %></p>
+			</div>
+			
+			<div>
+				<div>
+					<p>Index Fermeture</p>
+				</div>
+				<p><%= collect.index_f %></p>
+			</div>
+
+			<div>
+				<div>
+					<p>Vente Mensuelle</p>
+				</div>
+				<p><%= diff%></p>
+			</div>	
+			
+			<div>
+				<div>
+					<p>Stock Theorique</p>
+				</div>
+				<p><%= stock_theorique%></p>
+			</div>
+			<div>
+				<div>
+					<p>Stock Jauge</p>
+				</div>
+				<p><%=  stock_jauge%></p>
+			</div>
+			<div>
+				<div>
+					<p>Stock Jauge</p>
+				</div>
+				<p><%=  stock_jauge%></p>
+			</div>
+		</section>
+		<h3>RESULTS</h3>
+		<!--<div class="report">
+			<input type="text" placeholder="Remise en cuve">
+			<button>Analyse</button>
+		</div>-->
+		<table>
+			<thead>
+				<th>Ecart</th>
+				<th>Seuil(%)</th>
+				<th>Conclusion</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td><%=  ecart%></td>
+					<td>- xxx</td>
+					<td>xxx </td>
+				</tr>
+			</tbody>
+		</table>
+		<h3>DETAILS</h3>
+		<table class="t2">
+			<thead>
+				<th>Date</th>
+				<th>Reception</th>
+				<th>ouverture</th>
+				<th>Fermeture</th>
+			</thead>
+			<tbody>
+				<% results.forEach(result =>{ %>
+					<tr>
+						<td><%= result.date %></td>
+						<td><%= result.adjust %></td>
+						<td><%= result.open %></td>
+						<td><%= result.close %></td>
+					</tr>
+				<% });%>
+			</tbody>
+		</table>
+	</center>
+  </body>
+</html>

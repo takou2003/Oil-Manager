@@ -1,0 +1,47 @@
+div{
+	width:350px;
+	height:400px;
+	background-color:gray;
+	position:relative;
+	top:100px;
+	display:flex;
+	flex-direction:column;
+}
+div p{
+	font-family:Arial;
+	color:white;
+	font-size:28px;
+
+}
+
+div div{
+	width:80px;
+	height:80px;
+	background-color:white;
+	border-radius:60px;
+	position:relative;
+	top:0px;
+}
+div input {
+	width:200px;
+	height:30px;
+	position:relative;
+	top:30px;
+	border:none;
+	outline:none;
+}
+div button{
+	width:100px;
+	height:30px;
+	border:none;
+	position:absolute;
+	top:270px;
+	right:125px;
+
+}
+h5{
+	position:relative;
+	top:100px;
+	font-family:Arial;
+	color:white;
+}
